@@ -19,6 +19,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('', views.main_page),
+    path('reload', views.reload),
     path('save', views.save_events_json),
     path('last', views.last),
 ]

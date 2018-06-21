@@ -6,3 +6,6 @@ class Transmission(models.Model):
     sequence = models.SmallIntegerField()
     transcript = models.TextField()
     confidence = models.DecimalField(max_digits=4, decimal_places=3)
+
+    class Meta:
+        unique_together = (('recordtime','sequence',))

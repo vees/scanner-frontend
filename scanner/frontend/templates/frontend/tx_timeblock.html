@@ -1,0 +1,9 @@
+{% for tx in transmissions %}
+<div class="tx_timeblock">
+  {% ifchanged %}<span class="tx_timestamp">{{ tx.recordtime }}</span>{% endifchanged %}
+  <div class="tx_item">
+    <span class="tx_transcript">{{ tx.transcript }}</span>
+    <span class="tx_confidence">({{ tx.confidence }})</span>
+  </div>
+</div>
+{% endfor %}

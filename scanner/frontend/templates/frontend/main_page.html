@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Baltimore County Scanner Radio</title>
+    <meta name="keywords" content="police,fire,scanner,baltimore,county" />
+    <meta name="description" content="User Programmable scanner radio" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+.audioplayer audio {
+  width:25%; align: left;
+}
+.tx_timestamp {
+  font-weight: bold;
+}
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+    <script type="text/javascript">
+var auto_refresh = setInterval(
+    function() {
+        $('#main_timeline').load('reload').fadeIn("slow");
+    }, 10000); // refreshing after every 15000 milliseconds
+    </script>
+  </head>
+  <body id="home">
+    <h1>Baltimore County Scanner Radio</h1>
+    <div class="audioplayer">
+      <audio id="audioplayer" autoplay="true" controls="true"
+        preload="metadata" src="http://delta.vees.net:8000/baco2">
+      </audio>
+    </div>
+    <div class="tx_timeline" id="main_timeline">
+      {% include "frontend/tx_timeblock.html" %}
+    </div>
+    <div class="sitenotes">
+      <ul>
+      <li>We have scheduled downtime for 6/3 through 6/8</li>
+      <li>Audio trouble? <a href="https://nodeping.com/reports/checks/5aq01w6y-xlnx-4fry-81pr-n9nmo98z6k4h">Check the stream status before emailing</a>.
+      <li><a href="http://www.dreamhost.com/donate.cgi?id=17248"><img border="0" alt="Donate towards my web hosting bill!" src="https://secure.newdream.net/donate1.gif" /></a>
+      <li><a href="http://eepurl.com/jjZn1">Sign up for email updates here</a>. Request a feature or report a problem to <a href="mailto:rob@vees.net">rob@vees.net</a>.
+      </ul>
+    </div>
+  </body>
+</html>
